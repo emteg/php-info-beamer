@@ -1,7 +1,7 @@
 <?php
-$config["datenbankBenutzer"] = "c4";
-$config["datenbankPasswort"] = "3CRLWeCwxBVAGffe";
+$config["datenbankBenutzer"] = "username";
+$config["datenbankPasswort"] = "password";
 $config["datenbankName"] = "infobeamer";
 
-$config["rootDir"] = "/beamer_dev";
+$config["rootDir"] = "/beamer";
 ?>
