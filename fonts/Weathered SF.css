@@ -1,0 +1,8 @@
+﻿/* @font-face kit by Fonts2u (http://www.fonts2u.com) */ 
+@font-face {
+	font-family: "Weathered SF";
+	src:url("Weathered SF.eot?") format("eot"),
+		url("Weathered SF.woff") format("woff"),
+		url("Weathered SF.ttf") format("truetype"),
+		url("Weathered SF.svg#WeatheredSF") format("svg");
+}
