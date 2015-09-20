@@ -3,3 +3,6 @@ templates_c
 
 # config.php muss jeweils manuell vor Ort angepasst werden
 config.php
+
+# css muss vor Ort angepasst werden
+infobeamer.css
