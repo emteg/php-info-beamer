@@ -10,6 +10,7 @@ require_once "./klassen/einstellung.class.php";
 
 $datenbank = new Datenbank();
 
+// Prüfen, ob Sonderformat für FlipDot-Anzeige von Urmel geforder ist
 if (isset($_GET["format"]) && $_GET["format"] == "flipdot") {
   $flipDot = true;
 } else {
@@ -24,40 +25,34 @@ if (isset($_GET["modul"])) {
   if ($modul->getByName($zielModul, $datenbank)) {
     $modulName = $modul->name;
   } else {
-    sterben($zielModul, $datenbank);
+    menuZeigen($zielModul, $datenbank);
   }
  
 } else {
-  sterben("", $datenbank);
+  menuZeigen("", $datenbank);
 }
 
-function sterben($zielModul, $datenbank) {
-  $alleModule = Array();
-  $sql = TModul::SQL_SELECT_ALLE;
-  
-  $alleModule = $datenbank->queryArray($sql, Array(), new ModulFactory());
-
-  $s = "Ein Modul mit dem Namen '" . $zielModul . "' ist leider nicht vorhanden :/<br/>\n" .
-  "Mögliche Module:<br/>\n" . 
-  "";
-  
-  foreach ($alleModule as $modul) {
-    $s .= $modul->name . "<br/>\n";
-  }
-  
-  $s .= "Einen dieser Namen in diese URL einsetzen:<br/>\n" .
-  "beamer.lan/view.php?modul=NAME";
-  
-  die($s);
-}
-
+// Falls laden und ausgeben, falls vorhanden
 require_once "./module/" . $modulName . "/" . $modulName . ".modul.php";
 
 // Modul-Objekt erzeugen, Daten laden lassen und Modul anzeigen
 $modul = modulErzeugen($modulName, $datenbank);
 modulAusgeben($modul, -1);
 
+
+
 /* Funktionen */
+
+function menuZeigen($zielModul, $datenbank) {
+  $alleModule = Array();
+  $sql = TModul::SQL_SELECT_ALLE;
+  
+  $alleModule = $datenbank->queryArray($sql, Array(), new ModulFactory());
+  menuAusgeben($alleModule, $zielModul);
+  
+  exit();
+}
+
 function modulErzeugen($name, $datenbank) {
 	$modul = new $name;
 	$modul->datenLaden($datenbank);
@@ -83,6 +78,19 @@ function modulAusgeben($modul, $naechstePosition) {
   } else {
     $smarty->display("display.tpl");
   }
+}
+
+function menuAusgeben($module, $zielModul) {
+  global $config;
+  
+  $smarty = new Smarty();
+	$smarty->setTemplateDir("./seiten/templates/");
+	
+  $smarty->assign("module", $module);
+  $smarty->assign("zielModul", $zielModul);
+  $smarty->assign("config", $config);
+  
+	$smarty->display("view.tpl");
 }
 
 function anzeigeDauerErmitteln() {

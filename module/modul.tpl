@@ -18,6 +18,6 @@
 {/block}
 {block name=titel}<h1>Hadiko LAN-Party #6</h1>{/block}
 {block name=body}{/block}
-	</body>
   <script src="poll.js"></script>
+	</body>
 </html>
