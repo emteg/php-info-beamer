@@ -1,0 +1,12 @@
+beamer is das Frontend zum Anzeigen von Slide Shows im Browser von php-info-beamer (https://github.com/emteg/php-info-beamer). Die Slide Show muss im Backend erstellt werden und kann dann durch das Aufrufen von /beamer angezeigt werden. Um eine einzelne Folie dauerhaft anzuzeigen, kann man auch /beamer/view.php öffnen und im Auswahlmenü eine Folie auswählen. Sie wird mit dem im Backend eingestellen Interval aktualisiert.
+
+Nach dem ersten Auschecken muss das Frontend zunächst mit den Datenbankzugangsdaten konfiguriert werden. Als nächstes sollte man noch das CSS individuell anpassen.
+
+Bei der Anzeige auf dem Client wechselt man nach dem Aufrufen der Seite in den Full Screen Modus (F11). Falls die Schriftgröße zu klein ist, kann man diese mit STRG+Mousewheel anpassen. Manche Folien können abhängig vom auf dem Bildschirm zur verfügung stehenden Platz unterschiedlich viele Elemente anzeigen. Zum Einstellen gibt es in der oberen linken Ecke kleine + und - Links.
+
+Konfiguration:
+- config.vorlage.php kopieren und als config.php abspeichern
+- config.php öffnen und Benutzername, Passwortund den Namen der SQL-Datenbank eintragen
+
+Customizen:
+- CSS nach Wunsch bearbeiten
