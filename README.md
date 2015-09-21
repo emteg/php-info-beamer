@@ -3,8 +3,8 @@ php-info-beamer ist eine Applikation, mit der eine Slide Show mit aktuellen Info
 Jede Folie ist Teil eines Moduls, das unterschiedliche Daten laden und anzeigen kann. Wie der Name schon sagt, kann man diese Module beliebig im Backend ein- und ausschalten. Mit relativ geringem Aufwand kann man neue Module programmieren.
 
 Zur Verwendung auf einem Webserver checkt man am besten beide Projekte getrennt in den htdocs-Ordner aus:
-https://github.com/emteg/beamercontrol.git
-https://github.com/emteg/beamer.git
+- https://github.com/emteg/beamercontrol.git
+- https://github.com/emteg/beamer.git
 
 Wenn man trotzdem dieses Sammelprojekt auschecken möchte, muss man nach dem Auschecken diese beiden Commands ausführen, um die Unterprojekte von git zu holen:
 - git submodule init
