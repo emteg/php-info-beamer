@@ -9,6 +9,8 @@ https://github.com/emteg/beamer.git
 Wenn man trotzdem dieses Sammelprojekt auschecken möchte, muss man nach dem Auschecken diese beiden Commands ausführen, um die Unterprojekte von git zu holen:
 git submodule init
 git submodule update
+Mehr Infos gibt es hier:
+https://git-scm.com/book/de/v1/Git-Tools-Submodule
 
 Dieses Github-Projekt dient vor allem zum Sammeln beider Unterprojekte. Für das Setup und die Konfiguration bitte die Readme-Dateien beider Projekte beachten. Beim ersten Setup ist es empfehlenswert, zuerst beamercontrol auszuchecken und zum laufen zu brigen, weil das Frontend in beamer wesentlich weniger Einstellungen verlangt.
 
