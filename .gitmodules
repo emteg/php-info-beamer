@@ -1,0 +1,6 @@
+[submodule "beamer"]
+	path = beamer
+	url = https://github.com/emteg/beamer.git
+[submodule "beamercontrol"]
+	path = beamercontrol
+	url = https://github.com/emteg/beamercontrol.git
