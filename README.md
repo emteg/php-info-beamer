@@ -6,6 +6,10 @@ Zur Verwendung auf einem Webserver checkt man am besten beide Projekte getrennt 
 https://github.com/emteg/beamercontrol.git
 https://github.com/emteg/beamer.git
 
+Wenn man trotzdem dieses Sammelprojekt auschecken möchte, muss man nach dem Auschecken diese beiden Commands ausführen, um die Unterprojekte von git zu holen:
+git submodule init
+git submodule update
+
 Dieses Github-Projekt dient vor allem zum Sammeln beider Unterprojekte. Für das Setup und die Konfiguration bitte die Readme-Dateien beider Projekte beachten. Beim ersten Setup ist es empfehlenswert, zuerst beamercontrol auszuchecken und zum laufen zu brigen, weil das Frontend in beamer wesentlich weniger Einstellungen verlangt.
 
 Slide Show erstellen
