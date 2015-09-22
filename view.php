@@ -68,6 +68,8 @@ function modulAusgeben($modul, $naechstePosition) {
 	$smarty->assign("modulAnzeigeDauer", anzeigeDauerErmitteln());
 	$smarty->assign("modulName", $modul->getName());
 	$smarty->assign("naechstePosition", -1);
+  
+  $smarty->assign("url", $_SERVER["PHP_SELF"] . "?modul=" . $modul->getName());
 	
 	foreach ($modul->getTemplateVars() as $key => $var) {
 		$smarty->assign($key, $var);
