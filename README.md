@@ -10,6 +10,9 @@ Wenn man trotzdem dieses Sammelprojekt auschecken möchte, muss man nach dem Aus
 - git submodule init
 - git submodule update
 
+Updates kann man einspielen mit:
+git submodule -q foreach git pull -q origin master
+
 Mehr Infos gibt es hier:
 https://git-scm.com/book/de/v1/Git-Tools-Submodule
 
