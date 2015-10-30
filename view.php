@@ -63,7 +63,7 @@ function modulAusgeben($modul, $naechstePosition) {
 	global $flipDot;
   
 	$smarty = new Smarty();
-	$smarty->setTemplateDir("./module/" . $modul->getName() . "/");
+	$smarty->setTemplateDir("./module/" . strtolower($modul->getName()) . "/");
 	
 	$smarty->assign("modulAnzeigeDauer", anzeigeDauerErmitteln());
 	$smarty->assign("modulName", $modul->getName());
