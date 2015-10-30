@@ -33,7 +33,7 @@ if (isset($_GET["modul"])) {
 }
 
 // Falls laden und ausgeben, falls vorhanden
-require_once "./module/" . $modulName . "/" . $modulName . ".modul.php";
+require_once "./module/" . strtolower($modulName) . "/" . strtolower($modulName) . ".modul.php";
 
 // Modul-Objekt erzeugen, Daten laden lassen und Modul anzeigen
 $modul = modulErzeugen($modulName, $datenbank);
