@@ -8,13 +8,12 @@
     {else}
     <meta http-equiv="refresh" content="{$modulAnzeigeDauer};">
     {/if}
+		<link rel="stylesheet" type="text/css" href="./fonts/font.css">
 		<link rel="stylesheet" type="text/css" href="infobeamer.css">
-		<!--<link rel="stylesheet" type="text/css" href="./fonts/Weathered SF.css">-->
 	</head>
 	<body>
-{$logoDateiname = "logo.png"}
 {block name=logo}
-		<img src="{$logoDateiname}" class="logo">
+		<img src="logo.png" class="logo">
 {/block}
 {block name=titel}<h1>Hadiko LAN-Party #6</h1>{/block}
 {block name=body}{/block}

@@ -6,3 +6,15 @@ config.php
 
 # css muss vor Ort angepasst werden
 infobeamer.css
+
+# hintergrundbild muss vor Ort angepasst werden
+background.png
+
+# logo muss vor Ort angepasst werden
+logo.png
+
+# custom fonts werden vor Ort angepasst
+*.ttf
+*.eot
+*.svg
+*.woff

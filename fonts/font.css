@@ -1,0 +1,6 @@
+﻿/* @font-face kit by Fonts2u (http://www.fonts2u.com) */ 
+@font-face {
+	font-family: 'Starjedi';
+	src:url('starjedi.eot') format('eot');
+	src:url('starjedi.woff') format('woff'), url('starjedi.svg') format('svg'), url('starjedi.ttf') format('truetype');
+}

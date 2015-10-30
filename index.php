@@ -15,7 +15,7 @@ $playlist = new Playlist();
 $aktuellePlaylistPosition = playlistPositionErmitteln();
 $naechstePlaylistPosition = naechstePlaylistPositionErmitteln($aktuellePlaylistPosition);
 
-$aktuellesModul = $playlist->playlist[$aktuellePlaylistPosition]["Name"];
+$aktuellesModul = strtolower($playlist->playlist[$aktuellePlaylistPosition]["Name"]);
 
 require_once "./module/" . $aktuellesModul . "/" . $aktuellesModul . ".modul.php";
 
@@ -64,7 +64,7 @@ function modulAusgeben($modul, $naechstePosition) {
 	global $aktuellePlaylistPosition;
 	
 	$smarty = new Smarty();
-	$smarty->setTemplateDir("./module/" . $modul->getName() . "/");
+	$smarty->setTemplateDir("./module/" . strtolower($modul->getName()) . "/");
 	
 	$smarty->assign("modulAnzeigeDauer", anzeigeDauerErmitteln());
 	$smarty->assign("modulName", $modul->getName());
