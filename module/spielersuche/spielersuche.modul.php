@@ -21,6 +21,8 @@ class Spielersuche extends Modul {
 		
 		$this->templateVars["gesuche"] = $gesuche;
 		$this->templateVars["limit"] = $this->limitAuslesen();
+    
+    parent::datenLaden($datenbank);
 	}
 	
 	private function gesuchVerarbeiten($record) {
