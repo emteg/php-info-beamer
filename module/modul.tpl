@@ -15,8 +15,9 @@
 {block name=logo}
 		<img src="logo.png" class="logo">
 {/block}
-{block name=titel}<h1>Hadiko LAN-Party #6</h1>{/block}
+{block name=titel}<h1>{$titel}</h1>{/block}
 {block name=body}{/block}
+{block name=uhrzeit}<span class="uhrzeit">{$zeit}</span>{/block}
   <script src="poll.js"></script>
 	</body>
 </html>

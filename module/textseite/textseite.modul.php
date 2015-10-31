@@ -4,6 +4,7 @@ class Textseite extends Modul {
 	
 		$letzteSeite = $this->letzteSeitenIdAuslesen();
 		$this->neueSeiteLaden($letzteSeite, $datenbank);
+    parent::datenLaden($datenbank);
 		
 	}
 	

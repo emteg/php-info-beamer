@@ -24,6 +24,8 @@ class Spielderstunde extends Modul {
 		$this->templateVars["termine"] = $termine;
 		$this->templateVars["zeit"] = date("H:i");
 		$this->templateVars["limit"] = $this->limitAuslesen();
+    
+    parent::datenLaden($datenbank);
 	}
 	
 	private function eventVerarbeiten($record) {	
