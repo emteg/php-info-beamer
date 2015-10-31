@@ -4,6 +4,7 @@ class Textseite extends Modul {
 	
 		$letzteSeite = $this->letzteSeitenIdAuslesen();
 		$this->neueSeiteLaden($letzteSeite, $datenbank);
+		$this->titelLaden($datenbank);
 		
 	}
 	
@@ -68,6 +69,10 @@ class Textseite extends Modul {
 		
 		setcookie("textSeiteLetzteId", $seitenId);
 		
+	}
+	
+	private function titelLaden($datenbank) {
+		// TO DO
 	}
 }
 ?>
