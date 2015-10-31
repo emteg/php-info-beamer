@@ -16,6 +16,7 @@ class Pizzastatistik extends Modul {
 		
 		$this->templateVars["verkaufe"] = $verkaufe;
 		$this->templateVars["limit"] = $this->limitAuslesen();
+    parent::datenLaden($datenbank);
 		
 	}
 	

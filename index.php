@@ -66,7 +66,6 @@ function modulAusgeben($modul, $naechstePosition) {
 	$smarty = new Smarty();
 	$smarty->setTemplateDir("./module/" . strtolower($modul->getName()) . "/");
 	
-	$smarty->assign("modulAnzeigeDauer", anzeigeDauerErmitteln());
 	$smarty->assign("modulName", $modul->getName());
 	$smarty->assign("naechstePosition", $naechstePosition);
 	
@@ -78,12 +77,5 @@ function modulAusgeben($modul, $naechstePosition) {
 	}
 	
 	$smarty->display("display.tpl");
-}
-
-function anzeigeDauerErmitteln() {
-	global $datenbank;
-	
-	$einstellung = new TEinstellung();
-	return $einstellung->read("ModulAnzeigeDauerSekunden", $datenbank);
 }
 ?>
