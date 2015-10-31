@@ -6,6 +6,7 @@ abstract class Modul {
 	
 	public function datenLaden($datenbank) {
     $this->getModulAnzeigeDauer($datenbank);
+    $this->templateVars["titel"] = $this->getEinstellung("eventTitel", $datenbank);
   }
 	
 	public function getTemplateVars() {
