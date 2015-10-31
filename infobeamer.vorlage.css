@@ -24,7 +24,6 @@ h1 {
 	font-style: italic;
 	margin-top: 0;
 	margin-bottom: 0;
-	text-transform: uppercase;
 }
 
 p {
@@ -158,4 +157,9 @@ img {
 
 .rechteSpalte {
 	margin-top: 2.5em;
+}
+
+.uhrzeit {
+  position: absolute;
+  bottom: 1em;
 }
