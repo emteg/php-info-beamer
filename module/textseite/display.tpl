@@ -1,5 +1,5 @@
 {extends file="../modul.tpl"}
 {block name=body}
-		<p>&nbsp;</p>
+    <br/>
 		<p class="textseite">{$inhalt}</p>
 {/block}
