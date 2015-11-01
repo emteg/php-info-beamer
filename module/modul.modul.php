@@ -6,8 +6,11 @@ abstract class Modul {
 	
 	public function datenLaden($datenbank) {
     $this->getModulAnzeigeDauer($datenbank);
-    $this->templateVars["titel"] = $this->getEinstellung("eventTitel", $datenbank);
+    $this->templateVars["titel"] = 
+        $this->getEinstellung("eventTitel", $datenbank);
     $this->templateVars["zeit"] = date("H:i");
+    $this->templateVars["alarmAnzeigen"] = 
+        $this->getEinstellung("alarmAnzeigen", $datenbank);
   }
 	
 	public function getTemplateVars() {
