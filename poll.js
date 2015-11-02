@@ -11,11 +11,17 @@ function httpGetAsync(theUrl, callback) {
 }
 
 function callback(contents) {
-  if (contents != "" && contents != 0) {
+  if (contents != "" && contents == "true") {
+    alert("reloading for alert!");
     location.href = ".";
   }
 }
 
-if (!alarmAnzeigen) {
+function checkAlarm() {
   httpGetAsync("alarm.php", callback);
+  setTimeout(checkAlarm, 3000);
+}
+
+if (!alarmAnzeigen) {
+  setTimeout(checkAlarm, 3000);
 }

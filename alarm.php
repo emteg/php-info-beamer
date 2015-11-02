@@ -8,9 +8,10 @@ $datenbank = new Datenbank();
 $einstellung = new TEinstellung();
 $alarmAnzeigen = $einstellung->read("alarmAnzeigen", $datenbank);
 
-if ($alarmAnzeigen == "") {
-  $alarmAnzeigen = "0";
+if ($alarmAnzeigen !== "true") {
+  $alarmAnzeigen = "false";
 }
-//echo 0;
+
+//echo "true";
 echo $alarmAnzeigen;
 ?>
