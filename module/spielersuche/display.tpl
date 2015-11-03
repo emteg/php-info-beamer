@@ -1,7 +1,7 @@
 {extends file="../modul.tpl"}
 {block name=titel}<h1>Mitspieler gesucht</h1>{/block}
 {block name=body}
-		<table>
+		<table class="table-auto-height">
 			<tr>
 				<th>Spiel</th>
 				<th>Erreichbar via</th>
