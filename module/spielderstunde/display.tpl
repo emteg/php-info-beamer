@@ -4,7 +4,7 @@
     <table class="table-auto-height">
 {if count($termine) > 0}
       <tr>
-        <td colspan="3" style="background-color: red;">
+        <td colspan="3" class="tdHervorgehoben">
   {if $termine[0]["hatAngefangen"]}
           Das Spiel der Stunde: {$termine[0]["Titel"]}
   {else}
