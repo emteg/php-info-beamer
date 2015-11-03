@@ -4,11 +4,11 @@
     <table class="table-auto-height">
 {if count($termine) > 0}
       <tr>
-        <td colspan="3" class="tdMittig">
+        <td colspan="3">
   {if $termine[0]["hatAngefangen"]}
-          {$termine[0]["Titel"]} noch {$termine[0]["Restzeit"]}
+          Das Spiel der Stunde ist für die nächsten {$termine[0]["Restzeit"]} ist {$termine[0]["Titel"]}.
   {else}
-          {$termine[0]["Titel"]} in {$termine[0]["Restzeit"]}
+          Das nächste Spiel der Stunde ist {$termine[0]["Titel"]}. Beginn in {$termine[0]["Restzeit"]}
   {/if}
         </td>
       </tr>
