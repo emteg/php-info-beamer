@@ -4,12 +4,12 @@
     <table class="table-auto-height">
 {if count($termine) > 0}
       <tr>
-        <td colspan="3">
+        <td colspan="3" style="background-color: red;">
   {if $termine[0]["hatAngefangen"]}
           Das Spiel der Stunde: {$termine[0]["Titel"]}
   {else}
-          Das nächste Spiel der Stunde ist {$termine[0]["Titel"]}. Beginn in {$termine[0]["Restzeit"]}
-  {/if}
+          {$termine[0]["Titel"]} wird Spiel der Stunde in {$termine[0]["Restzeit"]}
+  {/if}<br/>
         </td>
       </tr>
 {/if}
