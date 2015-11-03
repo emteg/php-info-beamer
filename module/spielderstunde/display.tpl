@@ -1,7 +1,7 @@
 {extends file="../modul.tpl"}
 {block name=titel}<h1>Spiel der Stunde</h1>{/block}
 {block name=body}
-    <table>
+    <table class="table-auto-height">
 {if count($termine) > 0}
       <tr>
         <td colspan="3" class="tdMittig">
