@@ -6,9 +6,9 @@
       <tr>
         <td colspan="3" class="tdMittig">
   {if $termine[0]["hatAngefangen"]}
-          {$termine[0]["Titel"]} <div class="normalMittig"> {$termine[0]["Restzeit"]}</div>
+          {$termine[0]["Titel"]} noch {$termine[0]["Restzeit"]}
   {else}
-          {$termine[0]["Titel"]} <div class="normalMittig">in {$termine[0]["Restzeit"]}</div>
+          {$termine[0]["Titel"]} in {$termine[0]["Restzeit"]}
   {/if}
         </td>
       </tr>
