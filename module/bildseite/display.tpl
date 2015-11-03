@@ -5,7 +5,7 @@
 			<img src="./img_upload/{$id}.{$extension}" class="imgAutoSize">
 		</div>
 {else}
-		<img src="{$logoDateiname}" class="logo">
+		<img src="logo.png" class="logo">
 {/if}
 {/block}
 {if $layout == "Mittig"}
