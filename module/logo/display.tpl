@@ -4,5 +4,5 @@
 {/block}
 {block name=titel}{/block}
 {block name=body}
-	<div style="text-align: center; font-size: 200%;">8. bis 10. Mai 2015</div>
+	<div style="text-align: center; font-size: 200%;">{$strings["event-date"]}</div>
 {/block}
