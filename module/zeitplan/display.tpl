@@ -1,5 +1,5 @@
 {extends file="../modul.tpl"}
-{block name=titel}<h1>{$modulName}</h1>{/block}
+{block name=titel}<h1>Zeitplan</h1>{/block}
 {block name=body}
 		<table>
 {foreach $termine as $termin}
