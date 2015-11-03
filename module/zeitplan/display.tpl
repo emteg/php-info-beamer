@@ -1,5 +1,5 @@
 {extends file="../modul.tpl"}
-{block name=titel}<h1>Zeitplan</h1>{/block}
+{block name=titel}<h1>{$strings["zeitplan-titel"]}</h1>{/block}
 {block name=body}
 		<table>
 {foreach $termine as $termin}
@@ -8,19 +8,19 @@
 				<td>{$termin["Titel"]}</td>
 				<td style="width: 7em; text-align: right;">
 {if $termin["hatAngefangen"]}
-					noch {$termin["Restzeit"]}
+					{$strings["time-remaining"]} {$termin["Restzeit"]}
 {else}
-					in {$termin["Restzeit"]}
+					{$strings["time-until"]} {$termin["Restzeit"]}
 {/if}
 				</td>
 			</tr>
 {foreachelse}
-			<tr><td colspan="3" class="tdMittig">- Zur Zeit keine Events eingetragen -</td></tr>
+			<tr><td colspan="3" class="tdMittig">{$strings["zeitplan-no-events"]}</td></tr>
 {/foreach}
 		</table>
 		<span class="configButtons">
-			<a href="{$url}&zeitplanAnzahl=mehr" title="Mehr Events anzeigen">m</a>
+			<a href="{$url}&zeitplanAnzahl=mehr" title="{$strings["zeitplan-show-more"]}">{$strings["show-more"]}</a>
 			<a href="">{$limit}</a>
-			<a href="{$url}&zeitplanAnzahl=weniger" title="Weniger Events anzeigen">w</a>
+			<a href="{$url}&zeitplanAnzahl=weniger" title="{$strings["zeitplan-show-less"]}">{$strings["show-more"]}</a>
 		</span>
 {/block}

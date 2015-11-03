@@ -1,11 +1,11 @@
 {extends file="../modul.tpl"}
-{block name=titel}<h1>Mitspieler gesucht</h1>{/block}
+{block name=titel}<h1>{$strings["spielersuche-title"]}</h1>{/block}
 {block name=body}
 		<table class="table-auto-height">
 			<tr>
-				<th>Spiel</th>
-				<th>Erreichbar via</th>
-				<th>Von</th>
+				<th>{$strings["spielersuche-game"]}</th>
+				<th>{$strings["spielersuche-location"]}</th>
+				<th>{$strings["spielersuche-from"]}</th>
 				<th></th>
 			</tr>
 {foreach $gesuche as $gesuch}
@@ -16,13 +16,13 @@
 				<td style="width: 5em; text-align: right;">{$gesuch["Zeit"]}</td>
 			</tr>
 {foreachelse}
-			<tr><td colspan="4" class="tdMittig">- Zur Zeit keine Gesuche eingetragen -</td></tr>
+			<tr><td colspan="4" class="tdMittig">{$strings["spielersuche-no-requests"]}</td></tr>
 {/foreach}
-      <tr><td colspan="4" class="tdMittig">Du suchst Mitspieler? Trag dich ein: hlp.hadiko.de/spielersuche</td></tr>
+      <tr><td colspan="4" class="tdMittig">{$strings["spielersuche-info"]}</td></tr>
 		</table>
 		<span class="configButtons">
-			<a href="{$url}&spielersucheAnzahl=mehr" title="Mehr Gesuche anzeigen">m</a>
+			<a href="{$url}&spielersucheAnzahl=mehr" title="{$strings["spielersuche-show-more"]}">{$strings["show-more"]}</a>
 			<a href="">{$limit}</a>
-			<a href="{$url}&spielersucheAnzahl=weniger" title="Weniger Gesuche anzeigen">w</a>
+			<a href="{$url}&spielersucheAnzahl=weniger" title="{$strings["spielersuche-show-less"]}">{$strings["show-less"]}</a>
 		</span>
 {/block}
