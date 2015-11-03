@@ -6,7 +6,7 @@
       <tr>
         <td colspan="3">
   {if $termine[0]["hatAngefangen"]}
-          Das Spiel der Stunde ist für die nächsten {$termine[0]["Restzeit"]} ist {$termine[0]["Titel"]}.
+          Das Spiel der Stunde: {$termine[0]["Titel"]}
   {else}
           Das nächste Spiel der Stunde ist {$termine[0]["Titel"]}. Beginn in {$termine[0]["Restzeit"]}
   {/if}
