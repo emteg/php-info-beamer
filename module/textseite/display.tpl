@@ -1,6 +1,6 @@
 {extends file="../modul.tpl"}
 {block name=body}
-    <span class="textseite-parent">
-      <p class="textseite">{$inhalt}</p>
-    </span>
+    <div class="textseite-parent">
+      <div class="textseite">{$inhalt}</div>
+    </div>
 {/block}
