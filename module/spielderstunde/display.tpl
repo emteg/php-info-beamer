@@ -1,21 +1,25 @@
 {extends file="../modul.tpl"}
-{block name=titel}<h1>Spiel der Stunde</h1>{/block}
+{block name=titel}<h1>{$strings["sds-titel"]}</h1>{/block}
 {block name=body}
+    <table class="table-auto-height">
 {if count($termine) > 0}
-	{if $termine[0]["hatAngefangen"]}
-		<p class="wichtigMittig">{$termine[0]["Titel"]} <div class="normalMittig"> {$termine[0]["Restzeit"]}</div></p>
-	{else}
-		<p class="wichtigMittig">{$termine[0]["Titel"]} <div class="normalMittig">in {$termine[0]["Restzeit"]}</div></p>
-	{/if}
+      <tr>
+        <td colspan="3" class="tdHervorgehoben">
+  {if $termine[0]["hatAngefangen"]}
+          {$strings["sds-current"]} {$termine[0]["Titel"]}
+  {else}
+          {$termine[0]["Titel"]} {$strings["sds-next"]} {$termine[0]["Restzeit"]}
+  {/if}<br/>
+        </td>
+      </tr>
 {/if}
-		<table>
 {foreach $termine as $termin name=loop}
 {if !$smarty.foreach.loop.first}
 			<tr>
 				<td>{$termin["Titel"]}</td>
 				<td style="width: 7em; text-align: right;">
 {if $termin["hatAngefangen"]}
-					noch {$termin["Restzeit"]}
+					{$strings["time-remaining"]} {$termin["Restzeit"]}
 {else}
 					{$termin["Restzeit"]}
 {/if}
@@ -23,12 +27,12 @@
 			</tr>
 {/if}
 {foreachelse}
-			<tr><td colspan="3" class="tdMittig">- Zur Zeit keine Spiele eingetragen -</td></tr>
+			<tr><td colspan="3" class="tdMittig">{$strings["sds-no-games"]}</td></tr>
 {/foreach}
 		</table>
 		<span class="configButtons">
-			<a href="{$url}&zeitplanAnzahl=mehr" title="Mehr Spiele anzeigen">+</a>
+			<a href="{$url}&zeitplanAnzahl=mehr" title="{$strings["sds-show-more"]}">{$strings["show-more"]}</a>
 			<a href="">{$limit}</a>
-			<a href="{$url}&zeitplanAnzahl=weniger" title="Weniger Spiele anzeigen">-</a>
+			<a href="{$url}&zeitplanAnzahl=weniger" title="{$strings["sds-show-less"]}">{$strings["show-less"]}</a>
 		</span>
 {/block}

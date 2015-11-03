@@ -6,8 +6,6 @@ abstract class Modul {
 	
 	public function datenLaden($datenbank) {
     $this->getModulAnzeigeDauer($datenbank);
-    $this->templateVars["titel"] = 
-        $this->getEinstellung("eventTitel", $datenbank);
     $this->templateVars["zeit"] = date("H:i");
     
     $this->templateVars["alarmAnzeigen"] = 
@@ -17,6 +15,7 @@ abstract class Modul {
     }
     $this->templateVars["alarmText"] = 
         $this->getEinstellung("alarmText", $datenbank);
+    $this->templateVars["strings"] = $this->loadStrings();
   }
 	
 	public function getTemplateVars() {
@@ -52,6 +51,35 @@ abstract class Modul {
   public function setEinstellung($name, $wert, $datenbank) {
     $einstellung = new TEinstellung();
     $einstellung->update($name, $wert, $datenbank);
+  }
+  
+  public function loadStrings() {
+    global $config;
+    
+    $result = Array();
+    $temp = Array();
+    $file = "strings.txt";
+    $contents = file_get_contents($file);
+    
+    if ($contents !== false) {
+      if (strpos($contents, "\r\n") === false) {
+        $temp = explode("\n", $contents);
+      } else {
+        $temp = explode("\r\n", $contents);
+      }
+      
+      foreach ($temp as $value) {
+        if (strlen($value) > 0) {
+          $values = explode("=", $value);
+          if (count($values) == 2) {
+            $result[$values[0]] = $values[1];
+          }
+        }
+      }
+    }
+
+    return $result;
+    
   }
 }
 ?>
