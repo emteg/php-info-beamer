@@ -18,7 +18,7 @@
 {foreachelse}
 			<tr><td colspan="4" class="tdMittig">- Zur Zeit keine Gesuche eingetragen -</td></tr>
 {/foreach}
-      <tr><td colspan="4" class="tdMittig">Du suchst Mitspieler? Trag Dein Gesuch ein unter hlp.hadiko.de/spielersuche</td></tr>
+      <tr><td colspan="4" class="tdMittig">Du suchst Mitspieler? Trag dich ein: hlp.hadiko.de/spielersuche</td></tr>
 		</table>
 		<span class="configButtons">
 			<a href="{$url}&spielersucheAnzahl=mehr" title="Mehr Gesuche anzeigen">m</a>

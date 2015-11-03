@@ -1,14 +1,18 @@
 {extends file="../modul.tpl"}
 {block name=titel}<h1>Spiel der Stunde</h1>{/block}
 {block name=body}
+    <table>
 {if count($termine) > 0}
-	{if $termine[0]["hatAngefangen"]}
-		<p class="wichtigMittig">{$termine[0]["Titel"]} <div class="normalMittig"> {$termine[0]["Restzeit"]}</div></p>
-	{else}
-		<p class="wichtigMittig">{$termine[0]["Titel"]} <div class="normalMittig">in {$termine[0]["Restzeit"]}</div></p>
-	{/if}
+      <tr>
+        <td colspan="3" class="tdMittig">
+  {if $termine[0]["hatAngefangen"]}
+          {$termine[0]["Titel"]} <div class="normalMittig"> {$termine[0]["Restzeit"]}</div>
+  {else}
+          {$termine[0]["Titel"]} <div class="normalMittig">in {$termine[0]["Restzeit"]}</div>
+  {/if}
+        </td>
+      </tr>
 {/if}
-		<table>
 {foreach $termine as $termin name=loop}
 {if !$smarty.foreach.loop.first}
 			<tr>
