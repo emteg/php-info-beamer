@@ -1,7 +1,6 @@
 {extends file="../modul.tpl"}
 {block name=titel}<h1>{$modulName}</h1>{/block}
 {block name=body}
-		<p>&nbsp;</p>
 		<table>
 {foreach $termine as $termin}
 			<tr>
