@@ -11,16 +11,32 @@ require_once "./klassen/einstellung.class.php";
 $datenbank = new Datenbank();
 $playlist = new Playlist();
 
+// Alarm?
+$einstellung = new TEinstellung();
+$alarmAnzeigen = $einstellung->read("alarmAnzeigen", $datenbank);
+if ($alarmAnzeigen === "true") {
+  $alarmAnzeigen = true;
+  $alarmText = $einstellung->read("alarmText", $datenbank);
+} else {
+  $alarmAnzeigen = false;
+}
+
 // Den Namen des nächsten Moduls ermitteln und die entsprechende Datei einbinden
 $aktuellePlaylistPosition = playlistPositionErmitteln();
 $naechstePlaylistPosition = naechstePlaylistPositionErmitteln($aktuellePlaylistPosition);
 
-$aktuellesModul = strtolower($playlist->playlist[$aktuellePlaylistPosition]["Name"]);
+if ($alarmAnzeigen) {
+  $aktuellesModulName = "Textseite";
+  $aktuellesModul = "textseite";
+} else {
+  $aktuellesModulName = $playlist->playlist[$aktuellePlaylistPosition]["Name"];
+  $aktuellesModul = strtolower($aktuellesModulName);
+}
 
 require_once "./module/" . $aktuellesModul . "/" . $aktuellesModul . ".modul.php";
 
 // Modul-Objekt erzeugen, Daten laden lassen und Modul anzeigen
-$modul = modulErzeugen($playlist->playlist[$aktuellePlaylistPosition]["Name"], $datenbank);
+$modul = modulErzeugen($aktuellesModulName, $datenbank);
 modulAusgeben($modul, $naechstePlaylistPosition);
 
 /* Funktionen */
