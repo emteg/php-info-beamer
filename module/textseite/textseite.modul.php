@@ -2,9 +2,14 @@
 class Textseite extends Modul {
 	public function datenLaden($datenbank) {
 	
-		$letzteSeite = $this->letzteSeitenIdAuslesen();
-		$this->neueSeiteLaden($letzteSeite, $datenbank);
     parent::datenLaden($datenbank);
+    $letzteSeite = $this->letzteSeitenIdAuslesen();
+    
+    if ($this->templateVars["alarmAnzeigen"] === "true") {
+      $this->templateVars["inhalt"] = $this->templateVars["alarmText"];
+    } else {
+      $this->neueSeiteLaden($letzteSeite, $datenbank);
+    }
 		
 	}
 	

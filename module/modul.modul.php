@@ -9,11 +9,14 @@ abstract class Modul {
     $this->templateVars["titel"] = 
         $this->getEinstellung("eventTitel", $datenbank);
     $this->templateVars["zeit"] = date("H:i");
+    
     $this->templateVars["alarmAnzeigen"] = 
         $this->getEinstellung("alarmAnzeigen", $datenbank);
     if ($this->templateVars["alarmAnzeigen"] == "alarmAnzeigen not set") {
       $this->templateVars["alarmAnzeigen"] = "false";
     }
+    $this->templateVars["alarmText"] = 
+        $this->getEinstellung("alarmText", $datenbank);
   }
 	
 	public function getTemplateVars() {

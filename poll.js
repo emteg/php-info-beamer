@@ -11,8 +11,7 @@ function httpGetAsync(theUrl, callback) {
 }
 
 function callback(contents) {
-  if (contents != "" && contents == "true") {
-    alert("reloading for alert!");
+  if (contents != "" && contents != alarmAnzeigen) {
     location.href = ".";
   }
 }
@@ -22,6 +21,4 @@ function checkAlarm() {
   setTimeout(checkAlarm, 3000);
 }
 
-if (!alarmAnzeigen) {
-  setTimeout(checkAlarm, 3000);
-}
+setTimeout(checkAlarm, 3000);
