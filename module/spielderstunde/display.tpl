@@ -27,8 +27,8 @@
 {/foreach}
 		</table>
 		<span class="configButtons">
-			<a href="{$url}&zeitplanAnzahl=mehr" title="Mehr Spiele anzeigen">+</a>
+			<a href="{$url}&zeitplanAnzahl=mehr" title="Mehr Spiele anzeigen">m</a>
 			<a href="">{$limit}</a>
-			<a href="{$url}&zeitplanAnzahl=weniger" title="Weniger Spiele anzeigen">-</a>
+			<a href="{$url}&zeitplanAnzahl=weniger" title="Weniger Spiele anzeigen">w</a>
 		</span>
 {/block}

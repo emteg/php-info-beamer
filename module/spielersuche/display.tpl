@@ -16,13 +16,13 @@
 				<td style="width: 5em; text-align: right;">{$gesuch["Zeit"]}</td>
 			</tr>
 {foreachelse}
-			<tr><td colspan="4" class="tdMittig">- Zur Zeit keine Gesuche vorhanden -</td></tr>
+			<tr><td colspan="4" class="tdMittig">- Zur Zeit keine Gesuche eingetragen -</td></tr>
 {/foreach}
+      <tr><td colspan="4" class="tdMittig">Du suchst Mitspieler? Trag Dein Gesuch ein unter hlp.hadiko.de/spielersuche</td></tr>
 		</table>
-		<p>Trag dein Gesuch ein unter <strong>spielersuche.lan</strong></p>
 		<span class="configButtons">
-			<a href="{$url}&spielersucheAnzahl=mehr" title="Mehr Gesuche anzeigen">+</a>
+			<a href="{$url}&spielersucheAnzahl=mehr" title="Mehr Gesuche anzeigen">m</a>
 			<a href="">{$limit}</a>
-			<a href="{$url}&spielersucheAnzahl=weniger" title="Weniger Gesuche anzeigen">-</a>
+			<a href="{$url}&spielersucheAnzahl=weniger" title="Weniger Gesuche anzeigen">w</a>
 		</span>
 {/block}
