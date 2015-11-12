@@ -44,7 +44,7 @@ class Spielderstunde extends Modul {
 			$interval = $ende->diff($now);
 		}
 		
-		$hours = $interval->format("%h");
+		$hours = $interval->h + $interval->days * 24;
 		
 		if ($hours == 0) {
       if ($result["hatAngefangen"]) {
@@ -53,7 +53,7 @@ class Spielderstunde extends Modul {
         $result["Restzeit"] = $interval->format("%im");
       }
 		} else if ($hours > 3) {
-			$result["Restzeit"] = $interval->format("%Hh");
+			$result["Restzeit"] = $hours . "h";
 		} else {
 			$result["Restzeit"] = $interval->format("%Hh %im");
 		}
