@@ -3,7 +3,7 @@ time-until=in
 show-more=m
 show-less=w
 event=hadiko lan-party vii
-event-date=11. bis 13. November 2015
+event-date=11. - 13. November 2015
 
 zeitplan-titel=Zeitplan
 zeitplan-no-events=- Zur Zeit keine Events eingetragen -
