@@ -21,6 +21,6 @@
 		<span class="configButtons">
 			<a href="{$url}&zeitplanAnzahl=mehr" title="{$strings["zeitplan-show-more"]}">{$strings["show-more"]}</a>
 			<a href="">{$limit}</a>
-			<a href="{$url}&zeitplanAnzahl=weniger" title="{$strings["zeitplan-show-less"]}">{$strings["show-more"]}</a>
+			<a href="{$url}&zeitplanAnzahl=weniger" title="{$strings["zeitplan-show-less"]}">{$strings["show-less"]}</a>
 		</span>
 {/block}
