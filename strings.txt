@@ -19,9 +19,9 @@ sds-show-less=Weniger Spiele anzeigen
 
 spielersuche-titel=Mitspieler gesucht
 spielersuche-game=Spiel
-spielersuche-location=Erreichbar via
+spielersuche-location=Via
 spielersuche-from=Von
 spielersuche-no-requests=- Zur Zeit keine Gesuche eingetragen -
-spielersuche-info=Du suchst Mitspieler? Trag dich ein: hlp.hadiko.de/spielersuche
+spielersuche-info=hlp.hadiko.de/spielersuche
 spielersuche-show-more=Mehr Gesuche anzeigen
 spielersuche-show-less=Weniger Gesuche anzeigen

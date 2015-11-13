@@ -6,7 +6,7 @@
 			<tr>
 				<td style="width: 6em;">{$termin["Beginn"]}</td>
 				<td>{$termin["Titel"]}</td>
-				<td style="width: 7em; text-align: right;">
+				<td style="width: 8em; text-align: right;">
 {if $termin["hatAngefangen"]}
 					{$strings["time-remaining"]} {$termin["Restzeit"]}
 {else}
