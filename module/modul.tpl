@@ -6,7 +6,7 @@
     {if $naechstePosition >= 0}
 		<meta http-equiv="refresh" content="{$modulAnzeigeDauer};url=./index.php?playlistItem={$naechstePosition}">
     {else}
-    <meta http-equiv="refresh" content="{$modulAnzeigeDauer};">
+    <meta http-equiv="refresh" content="{$modulAnzeigeDauer};url={$url}">
     {/if}
 		<link rel="stylesheet" type="text/css" href="./fonts/font.css">
 		<link rel="stylesheet" type="text/css" href="infobeamer.css">

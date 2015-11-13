@@ -32,7 +32,7 @@
 		</table>
 		<span class="configButtons">
 			<a href="{$url}&zeitplanAnzahl=mehr" title="{$strings["sds-show-more"]}">{$strings["show-more"]}</a>
-			<a href="">{$limit}</a>
+			<a href="{$url}">{$limit}</a>
 			<a href="{$url}&zeitplanAnzahl=weniger" title="{$strings["sds-show-less"]}">{$strings["show-less"]}</a>
 		</span>
 {/block}
