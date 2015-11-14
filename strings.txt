@@ -9,6 +9,7 @@ zeitplan-titel=Zeitplan
 zeitplan-no-events=- Zur Zeit keine Events eingetragen -
 zeitplan-show-more=Mehr Events anzeigen
 zeitplan-show-less=Weniger Events anzeigen
+zeitplan-info=hlp.hadiko.de/zeitplan.php/zeitplan.php
 
 sds-titel=Spiel der Stunde
 sds-current=Das Spiel der Stunde:
@@ -16,6 +17,7 @@ sds-next=wird Spiel der Stunde in
 sds-no-games=- Zur Zeit keine Spiele eingetragen -
 sds-show-more=Mehr Spiele anzeigen
 sds-show-less=Weniger Spiele anzeigen
+sds-info=hlp.hadiko.de/sds.php
 
 spielersuche-titel=Mitspieler gesucht
 spielersuche-game=Spiel

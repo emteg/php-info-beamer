@@ -18,6 +18,7 @@
 			<tr><td colspan="3" class="tdMittig">{$strings["zeitplan-no-events"]}</td></tr>
 {/foreach}
 		</table>
+		<span class="unten-rechts">{$strings["zeitplan-info"]}</span>
 		<span class="configButtons">
 			<a href="{$url}&zeitplanAnzahl=mehr" title="{$strings["zeitplan-show-more"]}">{$strings["show-more"]}</a>
 			<a href="">{$limit}</a>

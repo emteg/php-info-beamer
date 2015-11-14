@@ -30,6 +30,7 @@
 			<tr><td colspan="3" class="tdMittig">{$strings["sds-no-games"]}</td></tr>
 {/foreach}
 		</table>
+		<span class="unten-rechts">{$strings["sds-info"]}</span>
 		<span class="configButtons">
 			<a href="{$url}&zeitplanAnzahl=mehr" title="{$strings["sds-show-more"]}">{$strings["show-more"]}</a>
 			<a href="{$url}">{$limit}</a>
