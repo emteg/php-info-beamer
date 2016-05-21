@@ -21,7 +21,6 @@ class Spielderstunde extends Modul {
 			$termine[] = $this->eventVerarbeiten($record);
 		}
     
-    die(var_dump($termine));
 		
 		$this->templateVars["termine"] = $termine;
 		$this->templateVars["zeit"] = date("H:i");
