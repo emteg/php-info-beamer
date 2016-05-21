@@ -69,6 +69,8 @@ class Pizzastatistik extends Modul {
 		
 			if ($_GET["pizzastatistikAnzahl"] == "mehr") {
 				$limit++;
+            } else if (is_numeric($_GET["pizzastatistikAnzahl"]) and $_GET["pizzastatistikAnzahl"] > 0) {
+                $limit = $_GET["pizzastatistikAnzahl"];
 			} else {
 				$limit = max($limit - 1, 1);
 			}

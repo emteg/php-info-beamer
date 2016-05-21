@@ -81,5 +81,29 @@ abstract class Modul {
     return $result;
     
   }
+  
+  	public function limitAuslesen($name) {
+	
+		if (isset($_COOKIE[$name])) {
+			$limit = $_COOKIE[$name];
+		} else {
+			$limit = 8;
+		}
+		if (isset($_GET[$name])) {
+		
+			if ($_GET[$name] == "mehr") {
+				$limit++;
+            } else if (is_numeric($_GET[$name]) and intval($_GET[$name]) > 0) {
+                $limit = intval($_GET[$name]);
+			} else {
+				$limit = max($limit - 1, 1);
+			}
+		
+		}
+		
+		setcookie($name, $limit);
+		return $limit;
+		
+	}
 }
 ?>

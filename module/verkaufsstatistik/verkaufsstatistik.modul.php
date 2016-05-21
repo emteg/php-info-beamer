@@ -81,6 +81,8 @@ class Verkaufsstatistik extends Modul {
 		
 			if ($_GET["verkaufsstatistikAnzahl"] == "mehr") {
 				$limit++;
+            } else if (is_numeric($_GET["verkaufsstatistikAnzahl"]) and $_GET["verkaufsstatistikAnzahl"] > 0) {
+                $limit = $_GET["verkaufsstatistikAnzahl"];
 			} else {
 				$limit = max($limit - 1, 1);
 			}

@@ -57,6 +57,8 @@ class Spielersuche extends Modul {
 		
 			if ($_GET["spielersucheAnzahl"] == "mehr") {
 				$limit++;
+            } else if (is_numeric($_GET["spielersucheAnzahl"]) and $_GET["spielersucheAnzahl"] > 0) {
+                $limit = $_GET["spielersucheAnzahl"];
 			} else {
 				$limit = max($limit - 1, 1);
 			}

@@ -20,6 +20,8 @@ class Spielderstunde extends Modul {
 		foreach ($records as $record) {
 			$termine[] = $this->eventVerarbeiten($record);
 		}
+    
+    die(var_dump($termine));
 		
 		$this->templateVars["termine"] = $termine;
 		$this->templateVars["zeit"] = date("H:i");
@@ -73,6 +75,8 @@ class Spielderstunde extends Modul {
 		
 			if ($_GET["zeitplanAnzahl"] == "mehr") {
 				$limit++;
+            } else if (is_numeric($_GET["zeitplanAnzahl"]) and $_GET["zeitplanAnzahl"] > 0) {
+                $limit = $_GET["zeitplanAnzahl"];
 			} else {
 				$limit = max($limit - 1, 1);
 			}
