@@ -11,7 +11,7 @@
 		<link rel="stylesheet" type="text/css" href="./fonts/font.css">
 		<link rel="stylesheet" type="text/css" href="infobeamer.css">
 	</head>
-	<body>
+	<body style="font-size: {$fontZoom}%">
 {block name=logo}
 		<img src="logo.png" class="logo">
 {/block}

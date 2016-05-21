@@ -2,21 +2,23 @@
 require_once "./klassen/einstellung.class.php";
 
 abstract class Modul {
-	protected $templateVars = Array();
-	
-	public function datenLaden($datenbank) {
-    $this->getModulAnzeigeDauer($datenbank);
-    $this->templateVars["zeit"] = date("H:i");
+    protected $templateVars = Array();
     
-    $this->templateVars["alarmAnzeigen"] = 
-        $this->getEinstellung("alarmAnzeigen", $datenbank);
-    if ($this->templateVars["alarmAnzeigen"] == "alarmAnzeigen not set") {
-      $this->templateVars["alarmAnzeigen"] = "false";
+    public function datenLaden($datenbank) {
+        $this->getModulAnzeigeDauer($datenbank);
+        $this->templateVars["zeit"] = date("H:i");
+        
+        $this->templateVars["alarmAnzeigen"] = 
+            $this->getEinstellung("alarmAnzeigen", $datenbank);
+        if ($this->templateVars["alarmAnzeigen"] == "alarmAnzeigen not set") {
+          $this->templateVars["alarmAnzeigen"] = "false";
+        }
+        $this->templateVars["alarmText"] = 
+            $this->getEinstellung("alarmText", $datenbank);
+        $this->templateVars["strings"] = $this->loadStrings();
+        
+        $this->templateVars["fontZoom"] = $this->fontZoomAuslesen();
     }
-    $this->templateVars["alarmText"] = 
-        $this->getEinstellung("alarmText", $datenbank);
-    $this->templateVars["strings"] = $this->loadStrings();
-  }
 	
 	public function getTemplateVars() {
 		return $this->templateVars;
@@ -82,28 +84,38 @@ abstract class Modul {
     
   }
   
-  	public function limitAuslesen($name) {
-	
-		if (isset($_COOKIE[$name])) {
-			$limit = $_COOKIE[$name];
-		} else {
-			$limit = 8;
-		}
-		if (isset($_GET[$name])) {
-		
-			if ($_GET[$name] == "mehr") {
-				$limit++;
+    public function limitAuslesen($name) {
+    
+        if (isset($_COOKIE[$name])) {
+            $limit = $_COOKIE[$name];
+        } else {
+            $limit = 8;
+        }
+        if (isset($_GET[$name])) {
+        
+            if ($_GET[$name] == "mehr") {
+                $limit++;
             } else if (is_numeric($_GET[$name]) and intval($_GET[$name]) > 0) {
                 $limit = intval($_GET[$name]);
-			} else {
-				$limit = max($limit - 1, 1);
-			}
-		
-		}
-		
-		setcookie($name, $limit);
-		return $limit;
-		
-	}
+            } else {
+                $limit = max($limit - 1, 1);
+            }
+        
+        }
+        
+        setcookie($name, $limit);
+        return $limit;
+        
+    }
+    
+    public function fontZoomAuslesen() {
+        
+        if (isset($_GET["fontZoom"]) and is_numeric($_GET["fontZoom"]) and intval($_GET["fontZoom"]) >= 50) {
+            return intval($_GET["fontZoom"]);
+        } else {
+            return 100;
+        }
+        
+    }
 }
 ?>

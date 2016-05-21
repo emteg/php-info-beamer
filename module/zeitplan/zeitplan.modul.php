@@ -23,7 +23,7 @@ class Zeitplan extends Modul {
 		$this->templateVars["termine"] = $termine;
 		$this->templateVars["zeit"] = date("H:i");
 		$this->templateVars["limit"] = $this->limitAuslesen("zeitplanAnzahl");
-    parent::datenLaden($datenbank);
+        parent::datenLaden($datenbank);
 	}
 	
 	private function eventVerarbeiten($record) {	
