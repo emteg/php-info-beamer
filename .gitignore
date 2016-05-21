@@ -4,15 +4,6 @@ templates_c
 # config.php muss jeweils manuell vor Ort angepasst werden
 config.php
 
-# css muss vor Ort angepasst werden
-infobeamer.css
-
-# hintergrundbild muss vor Ort angepasst werden
-background.png
-
-# logo muss vor Ort angepasst werden
-logo.png
-
 # custom fonts werden vor Ort angepasst
 *.ttf
 *.eot
@@ -21,3 +12,7 @@ logo.png
 
 # bilderupload
 img_upload
+
+#designs
+designs
+!designs/default
