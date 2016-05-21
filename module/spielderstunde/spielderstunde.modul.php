@@ -14,7 +14,7 @@ class Spielderstunde extends Modul {
 				Kategorie = 2
 			ORDER BY
 				Beginn ASC
-			LIMIT " . $this->limitAuslesen("spielderstundeAnzahl");
+			LIMIT " . $this->limitAuslesen("zeitplanAnzahl");
 		$records = $datenbank->queryDirektArray($sql);
 		
 		foreach ($records as $record) {
@@ -24,7 +24,7 @@ class Spielderstunde extends Modul {
 		
 		$this->templateVars["termine"] = $termine;
 		$this->templateVars["zeit"] = date("H:i");
-		$this->templateVars["limit"] = $this->limitAuslesen("spielderstundeAnzahl");
+		$this->templateVars["limit"] = $this->limitAuslesen("zeitplanAnzahl");
     
     parent::datenLaden($datenbank);
 	}
