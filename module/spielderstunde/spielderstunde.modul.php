@@ -14,7 +14,7 @@ class Spielderstunde extends Modul {
 				Kategorie = 2
 			ORDER BY
 				Beginn ASC
-			LIMIT " . $this->limitAuslesen();
+			LIMIT " . $this->limitAuslesen("zeitplanAnzahl");
 		$records = $datenbank->queryDirektArray($sql);
 		
 		foreach ($records as $record) {
@@ -25,7 +25,7 @@ class Spielderstunde extends Modul {
 		
 		$this->templateVars["termine"] = $termine;
 		$this->templateVars["zeit"] = date("H:i");
-		$this->templateVars["limit"] = $this->limitAuslesen();
+		$this->templateVars["limit"] = $this->limitAuslesen("zeitplanAnzahl");
     
     parent::datenLaden($datenbank);
 	}
@@ -62,31 +62,7 @@ class Spielderstunde extends Modul {
 		
 		return $result;
 	}
-	
-	private function limitAuslesen() {
-	
-		if (isset($_COOKIE["zeitplanAnzahl"])) {
-			$limit = $_COOKIE["zeitplanAnzahl"];
-		} else {
-			$limit = 8;
-		}
-	
-		if (isset($_GET["zeitplanAnzahl"])) {
-		
-			if ($_GET["zeitplanAnzahl"] == "mehr") {
-				$limit++;
-            } else if (is_numeric($_GET["zeitplanAnzahl"]) and $_GET["zeitplanAnzahl"] > 0) {
-                $limit = $_GET["zeitplanAnzahl"];
-			} else {
-				$limit = max($limit - 1, 1);
-			}
-		
-		}
-		
-		setcookie("zeitplanAnzahl", $limit);
-		return $limit;
-		
-	}
+
   
   /**
    * Ausgabe für Flipdot-Anzeige

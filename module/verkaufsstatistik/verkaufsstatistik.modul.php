@@ -11,7 +11,7 @@ class Verkaufsstatistik extends Modul {
 		}
 		
 		$this->templateVars["verkaufe"] = $verkaufe;
-		$this->templateVars["limit"] = $this->limitAuslesen();
+		$this->templateVars["limit"] = $this->limitAuslesen("verkaufsstatistikAnzahl");
     parent::datenLaden($datenbank);
 		
 	}
@@ -20,7 +20,7 @@ class Verkaufsstatistik extends Modul {
 		
 		$result = Array();
 		$zeilen = explode("\n", $daten);
-		$limit = $this->limitAuslesen();
+		$limit = $this->limitAuslesen("verkaufsstatistikAnzahl");
 		
 		foreach ($zeilen as $zeile) {
 		
@@ -69,29 +69,5 @@ class Verkaufsstatistik extends Modul {
 		
 	}
 	
-	private function limitAuslesen() {
-	
-		if (isset($_COOKIE["verkaufsstatistikAnzahl"])) {
-			$limit = $_COOKIE["verkaufsstatistikAnzahl"];
-		} else {
-			$limit = 8;
-		}
-	
-		if (isset($_GET["verkaufsstatistikAnzahl"])) {
-		
-			if ($_GET["verkaufsstatistikAnzahl"] == "mehr") {
-				$limit++;
-            } else if (is_numeric($_GET["verkaufsstatistikAnzahl"]) and $_GET["verkaufsstatistikAnzahl"] > 0) {
-                $limit = $_GET["verkaufsstatistikAnzahl"];
-			} else {
-				$limit = max($limit - 1, 1);
-			}
-		
-		}
-		
-		setcookie("verkaufsstatistikAnzahl", $limit);
-		return $limit;
-		
-	}
 }
 ?>

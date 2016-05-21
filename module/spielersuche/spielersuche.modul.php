@@ -12,7 +12,7 @@ class Spielersuche extends Modul {
       ORDER BY
         Zeit DESC
       LIMIT " . 
-        $this->limitAuslesen();
+        $this->limitAuslesen("spielersucheAnzahl");
 		$records = $datenbank->queryDirektArray($sql);
 		
 		foreach ($records as $record) {
@@ -20,7 +20,7 @@ class Spielersuche extends Modul {
 		}
 		
 		$this->templateVars["gesuche"] = $gesuche;
-		$this->templateVars["limit"] = $this->limitAuslesen();
+		$this->templateVars["limit"] = $this->limitAuslesen("spielersucheAnzahl");
     
     parent::datenLaden($datenbank);
 	}
@@ -45,29 +45,5 @@ class Spielersuche extends Modul {
 		return $record;
 	}
 	
-	private function limitAuslesen() {
-	
-		if (isset($_COOKIE["spielersucheAnzahl"])) {
-			$limit = $_COOKIE["spielersucheAnzahl"];
-		} else {
-			$limit = 8;
-		}
-	
-		if (isset($_GET["spielersucheAnzahl"])) {
-		
-			if ($_GET["spielersucheAnzahl"] == "mehr") {
-				$limit++;
-            } else if (is_numeric($_GET["spielersucheAnzahl"]) and $_GET["spielersucheAnzahl"] > 0) {
-                $limit = $_GET["spielersucheAnzahl"];
-			} else {
-				$limit = max($limit - 1, 1);
-			}
-		
-		}
-		
-		setcookie("spielersucheAnzahl", $limit);
-		return $limit;
-		
-	}
 }
 ?>

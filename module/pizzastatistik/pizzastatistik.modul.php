@@ -15,7 +15,7 @@ class Pizzastatistik extends Modul {
 		}
 		
 		$this->templateVars["verkaufe"] = $verkaufe;
-		$this->templateVars["limit"] = $this->limitAuslesen();
+		$this->templateVars["limit"] = $this->limitAuslesen("pizzastatistikAnzahl");
     parent::datenLaden($datenbank);
 		
 	}
@@ -24,7 +24,7 @@ class Pizzastatistik extends Modul {
 		
 		$result = Array();
 		$zeilen = explode("\n", $daten);
-		$limit = $this->limitAuslesen();
+		$limit = $this->limitAuslesen("pizzastatistikAnzahl");
 		
 		foreach ($zeilen as $zeile) {
 		
@@ -57,29 +57,5 @@ class Pizzastatistik extends Modul {
 		
 	}
 	
-	private function limitAuslesen() {
-	
-		if (isset($_COOKIE["pizzastatistikAnzahl"])) {
-			$limit = $_COOKIE["pizzastatistikAnzahl"];
-		} else {
-			$limit = 8;
-		}
-	
-		if (isset($_GET["pizzastatistikAnzahl"])) {
-		
-			if ($_GET["pizzastatistikAnzahl"] == "mehr") {
-				$limit++;
-            } else if (is_numeric($_GET["pizzastatistikAnzahl"]) and $_GET["pizzastatistikAnzahl"] > 0) {
-                $limit = $_GET["pizzastatistikAnzahl"];
-			} else {
-				$limit = max($limit - 1, 1);
-			}
-		
-		}
-		
-		setcookie("pizzastatistikAnzahl", $limit);
-		return $limit;
-		
-	}
 }
 ?>
