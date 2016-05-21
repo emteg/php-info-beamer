@@ -9,15 +9,20 @@ abstract class Modul {
         $this->templateVars["zeit"] = date("H:i");
         
         $this->templateVars["alarmAnzeigen"] = 
-            $this->getEinstellung("alarmAnzeigen", $datenbank);
-        if ($this->templateVars["alarmAnzeigen"] == "alarmAnzeigen not set") {
-          $this->templateVars["alarmAnzeigen"] = "false";
-        }
+            $this->getEinstellung("alarmAnzeigen", $datenbank, "false");
+
         $this->templateVars["alarmText"] = 
             $this->getEinstellung("alarmText", $datenbank);
         $this->templateVars["strings"] = $this->loadStrings();
         
         $this->templateVars["fontZoom"] = $this->fontZoomAuslesen();
+        
+        $this->templateVars["design"] =
+            $this->getEinstellung("design", $datenbank, "default");
+        $this->templateVars["event"] =
+            $this->getEinstellung("event", $datenbank, "php-info-beamer");
+        $this->templateVars["eventDate"] =
+            $this->getEinstellung("eventDate", $datenbank, "event-date");
     }
 	
 	public function getTemplateVars() {
@@ -38,13 +43,13 @@ abstract class Modul {
     return $this->templateVars["modulAnzeigeDauer"];
   }
   
-  public function getEinstellung($name, $datenbank) {
+  public function getEinstellung($name, $datenbank, $default = "") {
     $einstellung = new TEinstellung();
     $wert = $einstellung->read($name, $datenbank);
     
     if ($wert === false) {
-      $wert = $name . " not set";
-      $einstellung->create($name, $wert, $datenbank);
+        $wert = $default;
+        $einstellung->create($name, $wert, $datenbank);
     }
     
     return $wert;
