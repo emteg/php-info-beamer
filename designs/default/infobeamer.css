@@ -1,0 +1,161 @@
+html { 
+  background: url(background.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+body {
+	font-family: "Arial", sans-serif;
+	margin: 0;
+	background: rgba(0, 0, 0, 0.7);
+	padding: 1em;
+	bottom: 2em;
+	top: 2em;
+	left: 2em;
+	right: 2em;
+	position: absolute;
+	color: #FFFFFF;
+	vertical-align: middle;
+}
+
+h1 {
+	font-style: italic;
+	margin-top: 0;
+	margin-bottom: 0;
+	text-transform: uppercase;
+}
+
+p {
+	margin-bottom: 0;
+	margin-top: 1em;
+}
+
+table {
+	margin-top: 1em;
+	width: 100%;
+}
+
+th {
+	text-align: left;
+}
+
+td {
+	vertical-align: top;
+}
+
+img {
+	float: right;
+}
+
+.grossMittig {
+	position: absolute;
+	bottom: 2em;
+	left: 2em;
+	right: 2em;
+	top: 2em;
+	line-height: 1em;
+	text-align: center;
+	font-size: 400%;
+}
+
+.textseite {
+	text-align: center;
+	font-size: 125%;
+}
+
+.configButtons {
+	position: absolute;
+	top: 0;
+	left: 0;
+	font-size: 75%;
+}
+
+.configButtons a {
+	margin-right: 1em;
+	text-decoration: none;
+	color: rgba(254, 254, 254, 0.05);
+}
+
+.configButtons a:hover {
+	color: rgba(254, 254, 254, 1);
+}
+
+.imgGross {
+	margin-left: auto;
+	margin-right: auto;
+	height: 80%;
+	display: block;
+	float: none;
+}
+
+.imgFull {
+	margin-left: auto;
+	margin-right: auto;
+	height: 100%;
+	display: block;
+	float: none;
+}
+
+.wichtigMittig {
+	font-size: 200%;
+	text-align: center;
+	color: white;
+	clear: both;
+}
+
+.normalMittig {
+	font-size: 100%;
+	vertical-align: middle;
+	text-align: center;
+	color: white;
+}
+
+.logo {
+	height: 2.4em;
+}
+
+.zweiSpalten {
+	-webkit-column-count: 2; /* Chrome, Safari, Opera */
+    -moz-column-count: 2; /* Firefox */
+    column-count: 2;
+}
+
+.imgAutoSizeContainer {
+	left: 1em; 
+	right: 1em; 
+	top: 1em; 
+	bottom: 4em; 
+	position: absolute;
+}
+
+.imgBeschriftungUntenMittig {
+	text-align: center; 
+	font-size: 200%; 
+	position: absolute; 
+	bottom: 0.5em; 
+	left: 0.5em; 
+	right: 0.5em;
+}
+
+.imgAutoSize {
+	max-width: 100%;
+    max-height: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+	float: none;
+}
+
+.linkeSpalte {
+	max-width: 50%;
+	margin-bottom: 1em;
+	height: calc(100% - 4.5em);
+	margin-top: 2.5em;
+	float: left;
+}
+
+.rechteSpalte {
+	margin-top: 2.5em;
+}
