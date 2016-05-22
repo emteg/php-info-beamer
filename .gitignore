@@ -14,5 +14,5 @@ config.php
 img_upload
 
 #designs
-designs
+designs/*
 !designs/default
